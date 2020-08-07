@@ -1,26 +1,17 @@
-/**
- * Class to store a vertex in a graph and an integer associated with it
- * representing the distance to this vertex from some other vertex
- *
- * DO NOT EDIT THIS CLASS!!!
- *
- * @author CS 1332 TAs
- * @version 1.0
- */
 public final class VertexDistance<T>
     implements Comparable<VertexDistance<? super T>> {
 
-    private final Vertex<T> vertex;
+    private final Integer vertex;
     private final int distance;
 
     /**
      * Creates a pairing of vertex and distance to that vertex.
      *
-     * @param vertex   the Vertex to be stored.
-     * @param distance the integer representing the distance to this Vertex
-     *                 from the previous Vertex.
+     * @param vertex   the unused.Vertex to be stored.
+     * @param distance the integer representing the distance to this unused.Vertex
+     *                 from the previous unused.Vertex.
      */
-    public VertexDistance(Vertex<T> vertex, int distance) {
+    public VertexDistance(int vertex, int distance) {
         this.vertex = vertex;
         this.distance = distance;
     }
@@ -30,7 +21,7 @@ public final class VertexDistance<T>
      *
      * @return the vertex
      */
-    public Vertex<T> getVertex() {
+    public int getVertex() {
         return vertex;
     }
 
@@ -47,7 +38,7 @@ public final class VertexDistance<T>
     public boolean equals(Object o) {
         if (o != null && o instanceof VertexDistance<?>) {
             VertexDistance<?> e = (VertexDistance<?>) o;
-            return distance == e.distance && vertex.equals(e.vertex);
+            return distance == e.distance && vertex == e.vertex;
         } else {
             return false;
         }
